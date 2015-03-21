@@ -120,14 +120,7 @@ names(data_complete)
 ###5. Making another data set (tidy data set) with the mean of every variable for each activity and each subject using the aggregate function; then exporting it to a txt-file and a csv-file.
 
 data_complete_version2<-aggregate(. ~activity + subject, data=data_complete, mean)
-write.csv(data_complete_version2, file = "smartphonedata_mean_activity_subject.txt", row.names=FALSE)
-write.csv(data_complete_version2, file = "smartphonedata_mean_activity_subject.csv", row.names=FALSE)
-
-
-###Codebook
-install.packages("knitr")
-library("knitr")
-knit2html("codebook.Rmd")
+write.table(data_complete_version2, file = "smartphonedata_mean_activity_subject.txt", row.names=FALSE)
 
 
 
